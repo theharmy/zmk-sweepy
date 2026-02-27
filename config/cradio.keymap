@@ -110,10 +110,10 @@
 
         Norden {
             bindings = <
-&kp Q  &kp L     &kp D  &kp DE_Z  &kp K       &kp P         &kp W            &kp O         &kp U         &kp BSPC
-&kp R  &kp DE_N  &kp T  &kp U     &kp F       &kp DE_Y      &kp C            &kp E         &kp I         &kp A
-&kp X  &kp J     &kp M  &kp B     &kp V       &kp DE_MINUS  &kp G            &kp DE_SLASH  &kp DE_COMMA  &kp DE_DOT
-                        &kp S     &layer_2    &layer_1      &mt LSHFT SPACE
+&kp DE_Q  &kp DE_L  &kp DE_D  &kp DE_Z  &kp DE_K    &kp DE_P      &kp DE_W         &kp DE_O      &kp DE_U      &kp BSPC
+&kp DE_R  &kp DE_N  &kp DE_T  &kp DE_H  &kp DE_F    &kp DE_Y      &kp DE_C         &kp DE_E      &kp DE_I      &kp DE_A
+&kp DE_X  &kp DE_J  &kp DE_M  &kp DE_B  &kp DE_V    &kp DE_MINUS  &kp DE_G         &kp DE_SLASH  &kp DE_COMMA  &kp DE_DOT
+                              &kp DE_S  &layer_2    &layer_1      &mt LSHFT SPACE
             >;
         };
 
