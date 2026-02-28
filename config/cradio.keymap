@@ -24,7 +24,7 @@
             tapping-term-ms = <220>;
             quick-tap-ms = <150>;
             require-prior-idle-ms = <100>;
-            bindings = <&mo>, <&kp>;
+            bindings = <&OSL_both_mo>, <&kp>;
 
             label = "OSL_MT";
         };
@@ -134,34 +134,21 @@
             label = "LAYER_3";
         };
 
-        osl_left_macro: layer_4 {
+        OSL_both_mo: OSL_Left_MO {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_tap>,
-                <&sl 4>,
+                <&macro_press>,
+                <&mo 4>,
                 <&macro_tap>,
                 <&kp F18>,
-                <&macro_wait_time 1000>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&mo 4>,
                 <&macro_tap>,
                 <&kp F17>;
 
-            label = "LAYER_4";
-        };
-
-        osl_right_macro: OSL_Right {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_tap>,
-                <&sl 5>,
-                <&macro_tap>,
-                <&kp F18>,
-                <&macro_wait_time 1000>,
-                <&macro_tap>,
-                <&kp F17>;
-
-            label = "OSL_RIGHT";
+            label = "OSL_LEFT_MO";
         };
     };
 
@@ -170,10 +157,10 @@
 
         Norden {
             bindings = <
-&kp DE_Q  &kp DE_L  &kp DE_D  &kp DE_Z  &kp DE_K           &kp DE_P         &kp DE_W         &kp DE_O      &kp DE_U      &kp BSPC
-&kp DE_R  &kp DE_N  &kp DE_T  &kp DE_H  &kp DE_F           &kp DE_Y         &kp DE_C         &kp DE_E      &kp DE_I      &kp DE_A
-&kp DE_X  &kp DE_J  &kp DE_M  &kp DE_B  &kp DE_V           &kp DE_MINUS     &kp DE_G         &kp DE_SLASH  &kp DE_COMMA  &kp DE_DOT
-                              &kp DE_S  &NAV_OSL_HT 0 4    &SYM_OSL_HT 0 5  &mt LSHFT SPACE
+&kp DE_Q        &kp DE_L  &kp DE_D  &kp DE_Z  &kp DE_K      &kp DE_P      &kp DE_W         &kp DE_O      &kp DE_U      &kp BSPC
+&kp DE_R        &kp DE_N  &kp DE_T  &kp DE_H  &kp DE_F      &kp DE_Y      &kp DE_C         &kp DE_E      &kp DE_I      &kp DE_A
+&OSL_MT 0 DE_X  &kp DE_J  &kp DE_M  &kp DE_B  &kp DE_V      &kp DE_MINUS  &kp DE_G         &kp DE_SLASH  &kp DE_COMMA  &OSL_MT 0 DE_DOT
+                                    &kp DE_S  &nav_macro    &sym_macro    &mt LSHFT SPACE
             >;
         };
 
@@ -199,8 +186,17 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans       &trans  &trans  &trans  &trans  &trans
 &kp N1  &kp N2  &kp N3  &kp N4  &kp N5       &kp N6  &kp N7  &kp N8  &kp N9  &kp N0
-&trans  &trans  &trans  &trans  &kp DE_N0    &trans  &trans  &trans  &trans  &to 5
+&trans  &trans  &trans  &trans  &kp DE_N0    &trans  &trans  &trans  &trans  &to 6
                         &trans  &trans       &trans  &trans
+            >;
+        };
+
+        osl_both {
+            bindings = <
+&trans     &trans    &trans    &trans     &trans    &trans  &trans     &trans    &trans    &trans
+&sk LCTRL  &sk LALT  &sk LGUI  &sk LSHFT  &trans    &trans  &sk LSHFT  &sk LGUI  &sk LALT  &sk LCTRL
+&trans     &trans    &trans    &trans     &trans    &trans  &trans     &trans    &trans    &trans
+                               &trans     &trans    &trans  &trans
             >;
         };
 
