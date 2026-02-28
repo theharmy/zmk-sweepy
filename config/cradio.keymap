@@ -29,22 +29,28 @@
             label = "OSL_MT";
         };
 
-        SYM_OSL_HT: SYM_OSL_HT {
+        OSL_MT_L: OSL_MT_L {
             compatible = "zmk,behavior-hold-tap";
-            label = "SYM_OSL_HT";
-            bindings = <&sym_macro>, <&sl>;
-
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <220>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <100>;
+            bindings = <&OSL_MO_L>, <&kp>;
+
+            label = "OSL_MT_L";
         };
 
-        NAV_OSL_HT: NAV_OSL_HT {
+        OSL_MT_R: OSL_MT_R {
             compatible = "zmk,behavior-hold-tap";
-            label = "NAV_OSL_HT";
-            bindings = <&nav_macro>, <&sl>;
-
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <220>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <100>;
+            bindings = <&OSL_MO_R>, <&kp>;
+
+            label = "OSL_MT_R";
         };
     };
 
@@ -191,10 +197,10 @@
 
         Norden {
             bindings = <
-&kp DE_Q        &kp DE_L  &kp DE_D  &kp DE_Z  &kp DE_K      &kp DE_P      &kp DE_W         &kp DE_O      &kp DE_U      &kp BSPC
-&kp DE_R        &kp DE_N  &kp DE_T  &kp DE_H  &kp DE_F      &kp DE_Y      &kp DE_C         &kp DE_E      &kp DE_I      &kp DE_A
-&OSL_MT 0 DE_X  &kp DE_J  &kp DE_M  &kp DE_B  &kp DE_V      &kp DE_MINUS  &kp DE_G         &kp DE_SLASH  &kp DE_COMMA  &OSL_MT 0 DE_DOT
-                                    &kp DE_S  &nav_macro    &sym_macro    &mt LSHFT SPACE
+&kp DE_Q          &kp DE_L  &kp DE_D  &kp DE_Z  &kp DE_K      &kp DE_P      &kp DE_W         &kp DE_O      &kp DE_U      &kp BSPC
+&kp DE_R          &kp DE_N  &kp DE_T  &kp DE_H  &kp DE_F      &kp DE_Y      &kp DE_C         &kp DE_E      &kp DE_I      &kp DE_A
+&OSL_MT_R 0 DE_X  &kp DE_J  &kp DE_M  &kp DE_B  &kp DE_V      &kp DE_MINUS  &kp DE_G         &kp DE_SLASH  &kp DE_COMMA  &OSL_MT_R 0 DE_DOT
+                                      &kp DE_S  &nav_macro    &sym_macro    &mt LSHFT SPACE
             >;
         };
 
