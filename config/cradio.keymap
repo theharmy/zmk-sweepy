@@ -16,6 +16,36 @@
             require-prior-idle-ms = <100>;
             bindings = <&kp>, <&kp>;
         };
+
+        OSL_MT: OSL_MT {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <220>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <100>;
+            bindings = <&mo>, <&kp>;
+
+            label = "OSL_MT";
+        };
+
+        SYM_OSL_HT: SYM_OSL_HT {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SYM_OSL_HT";
+            bindings = <&sym_macro>, <&osl_right_macro>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+
+        NAV_OSL_HT: NAV_OSL_HT {
+            compatible = "zmk,behavior-hold-tap";
+            label = "NAV_OSL_HT";
+            bindings = <&nav_macro>, <&osl_left_macro>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     conditional_layers {
@@ -53,7 +83,7 @@
     };
 
     macros {
-        layer_1: layer_1 {
+        sym_macro: layer_1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -70,7 +100,7 @@
             label = "LAYER_1";
         };
 
-        layer_2: layer_2 {
+        nav_macro: layer_2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -87,7 +117,7 @@
             label = "LAYER_2";
         };
 
-        layer_3: layer_3 {
+        num_macro: layer_3 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -103,6 +133,38 @@
 
             label = "LAYER_3";
         };
+
+        osl_left_macro: layer_4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&sl 4>,
+                <&macro_tap>,
+                <&kp F18>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&macro_tap>,
+                <&kp F17>;
+
+            label = "LAYER_4";
+        };
+
+        osl_right_macro: OSL_Right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&sl 5>,
+                <&macro_tap>,
+                <&kp F18>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&macro_tap>,
+                <&kp F17>;
+
+            label = "OSL_RIGHT";
+        };
     };
 
     keymap {
@@ -110,10 +172,10 @@
 
         Norden {
             bindings = <
-&kp DE_Q  &kp DE_L  &kp DE_D  &kp DE_Z  &kp DE_K    &kp DE_P      &kp DE_W         &kp DE_O      &kp DE_U      &kp BSPC
-&kp DE_R  &kp DE_N  &kp DE_T  &kp DE_H  &kp DE_F    &kp DE_Y      &kp DE_C         &kp DE_E      &kp DE_I      &kp DE_A
-&kp DE_X  &kp DE_J  &kp DE_M  &kp DE_B  &kp DE_V    &kp DE_MINUS  &kp DE_G         &kp DE_SLASH  &kp DE_COMMA  &kp DE_DOT
-                              &kp DE_S  &layer_2    &layer_1      &mt LSHFT SPACE
+&kp DE_Q  &kp DE_L  &kp DE_D  &kp DE_Z  &kp DE_K           &kp DE_P         &kp DE_W         &kp DE_O      &kp DE_U      &kp BSPC
+&kp DE_R  &kp DE_N  &kp DE_T  &kp DE_H  &kp DE_F           &kp DE_Y         &kp DE_C         &kp DE_E      &kp DE_I      &kp DE_A
+&kp DE_X  &kp DE_J  &kp DE_M  &kp DE_B  &kp DE_V           &kp DE_MINUS     &kp DE_G         &kp DE_SLASH  &kp DE_COMMA  &kp DE_DOT
+                              &kp DE_S  &NAV_OSL_HT 0 0    &SYM_OSL_HT 0 0  &mt LSHFT SPACE
             >;
         };
 
@@ -128,10 +190,10 @@
 
         NAV {
             bindings = <
-&kp N1         &kp N2                   &kp N3           &kp N4          &kp N5       &kp N6    &kp N7          &kp N8       &kp N9          &kp LC(BSPC)
-&mt LCTRL TAB  &mt LEFT_ALT LEFT_ARROW  &mt LEFT_GUI UP  &mt LSHFT DOWN  &kp RIGHT    &kp LEFT  &mt LSHFT DOWN  &mt LGUI UP  &mt LALT RIGHT  &mt LCTRL ESCAPE
-&trans         &trans                   &trans           &trans          &kp N0       &trans    &trans          &trans       &trans          &trans
-                                                         &trans          &trans       &trans    &trans
+&kp N1         &kp N2                   &kp N3           &kp N4          &kp N5       &kp N6              &kp N7          &kp N8       &kp N9          &kp LC(BSPC)
+&mt LCTRL TAB  &mt LEFT_ALT LEFT_ARROW  &mt LEFT_GUI UP  &mt LSHFT DOWN  &kp RIGHT    &kp LEFT            &mt LSHFT DOWN  &mt LGUI UP  &mt LALT RIGHT  &mt LCTRL ESCAPE
+&trans         &trans                   &trans           &key_repeat     &kp N0       &trans              &key_repeat     &trans       &trans          &trans
+                                                         &trans          &trans       &kp LG(LEFT_SHIFT)  &kp ENTER
             >;
         };
 
@@ -139,8 +201,26 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans       &trans  &trans  &trans  &trans  &trans
 &kp N1  &kp N2  &kp N3  &kp N4  &kp N5       &kp N6  &kp N7  &kp N8  &kp N9  &kp N0
-&trans  &trans  &trans  &trans  &kp DE_N0    &trans  &trans  &trans  &trans  &to 4
+&trans  &trans  &trans  &trans  &kp DE_N0    &trans  &trans  &trans  &trans  &to 5
                         &trans  &trans       &trans  &trans
+            >;
+        };
+
+        OSL_Left {
+            bindings = <
+&trans     &trans    &trans    &trans     &trans    &trans  &trans  &trans  &trans  &trans
+&sk LCTRL  &sk LALT  &sk LGUI  &sk LSHFT  &trans    &trans  &trans  &trans  &trans  &trans
+&trans     &trans    &trans    &trans     &trans    &trans  &trans  &trans  &trans  &trans
+                               &trans     &trans    &trans  &trans
+            >;
+        };
+
+        OSL_Right {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans    &trans  &trans     &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &sk LSHFT  &sk LGUI  &sk LALT  &sk LCTRL
+&trans  &trans  &trans  &trans  &trans    &trans  &trans     &trans    &trans    &trans
+                        &trans  &trans    &trans  &trans
             >;
         };
 
