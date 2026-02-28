@@ -16,42 +16,6 @@
             require-prior-idle-ms = <100>;
             bindings = <&kp>, <&kp>;
         };
-
-        OSL_MT: OSL_MT {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <220>;
-            quick-tap-ms = <150>;
-            require-prior-idle-ms = <100>;
-            bindings = <&OSL_both_mo>, <&kp>;
-
-            label = "OSL_MT";
-        };
-
-        OSL_MT_L: OSL_MT_L {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <220>;
-            quick-tap-ms = <150>;
-            require-prior-idle-ms = <100>;
-            bindings = <&OSL_MO_L>, <&kp>;
-
-            label = "OSL_MT_L";
-        };
-
-        OSL_MT_R: OSL_MT_R {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <220>;
-            quick-tap-ms = <150>;
-            require-prior-idle-ms = <100>;
-            bindings = <&OSL_MO_R>, <&kp>;
-
-            label = "OSL_MT_R";
-        };
     };
 
     conditional_layers {
