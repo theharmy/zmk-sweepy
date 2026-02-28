@@ -50,6 +50,16 @@
             bindings = <&kp DE_SHARP_S>;
             key-positions = <30 17>;
         };
+
+        Esc {
+            bindings = <&kp ESCAPE>;
+            key-positions = <1 2>;
+        };
+
+        Tab {
+            bindings = <&kp TAB>;
+            key-positions = <2 3>;
+        };
     };
 
     macros {
