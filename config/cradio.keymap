@@ -5,6 +5,8 @@
 #include <dt-bindings/zmk/keys.h>
 #include "keys_de.h"
 
+&sl { ignore-modifiers; };
+
 / {
     behaviors {
         ht: hold_tap {
