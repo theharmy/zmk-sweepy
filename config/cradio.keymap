@@ -184,7 +184,7 @@
         to_nav: hmr_nav {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap>, <&to 1 &kp F15>;
+            bindings = <&macro_tap>, <&to 2 &kp F15>;
 
             label = "HMR_NAV";
         };
@@ -192,7 +192,7 @@
         to_norden: to_norden {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap>, <&to 1 &kp F17>;
+            bindings = <&macro_tap>, <&to 0 &kp F17>;
 
             label = "TO_NORDEN";
         };
