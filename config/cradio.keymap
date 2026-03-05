@@ -54,31 +54,56 @@
             bindings = <&kp DE_U_UMLAUT>;
             key-positions = <8 17>;
             layers = <0>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <100>;
         };
 
         ae {
             bindings = <&kp DE_A_UMLAUT>;
             key-positions = <19 17>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <100>;
         };
 
         oe {
             bindings = <&kp DE_O_UMLAUT>;
             key-positions = <17 7>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <100>;
         };
 
         ss {
             bindings = <&kp DE_SHARP_S>;
             key-positions = <30 17>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <100>;
+            layers = <0>;
         };
 
         Esc {
             bindings = <&kp ESCAPE>;
-            key-positions = <1 2>;
+            key-positions = <1 11>;
+            require-prior-idle-ms = <100>;
+            timeout-ms = <75>;
         };
 
         Tab {
             bindings = <&kp TAB>;
-            key-positions = <2 3>;
+            key-positions = <2 12>;
+            timeout-ms = <75>;
+            require-prior-idle-ms = <100>;
+        };
+
+        repeat {
+            bindings = <&key_repeat>;
+            key-positions = <3 13>;
+            timeout-ms = <75>;
+        };
+
+        repeat_r {
+            bindings = <&key_repeat>;
+            key-positions = <6 16>;
+            timeout-ms = <75>;
         };
     };
 
