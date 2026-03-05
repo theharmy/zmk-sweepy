@@ -25,7 +25,7 @@
             bindings = <&mo>, <&to_sym>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <175>;
+            tapping-term-ms = <250>;
             flavor = "tap-unless-interrupted";
         };
 
@@ -35,7 +35,7 @@
             bindings = <&mo>, <&to_nav>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <175>;
+            tapping-term-ms = <250>;
             flavor = "tap-unless-interrupted";
         };
     };
@@ -54,7 +54,7 @@
 
         ue {
             bindings = <&kp DE_U_UMLAUT>;
-            key-positions = <8 17>;
+            key-positions = <8 30>;
             layers = <0>;
             timeout-ms = <50>;
             require-prior-idle-ms = <100>;
@@ -62,14 +62,14 @@
 
         ae {
             bindings = <&kp DE_A_UMLAUT>;
-            key-positions = <19 17>;
+            key-positions = <19 30>;
             timeout-ms = <50>;
             require-prior-idle-ms = <100>;
         };
 
         oe {
             bindings = <&kp DE_O_UMLAUT>;
-            key-positions = <17 7>;
+            key-positions = <30 7>;
             timeout-ms = <50>;
             require-prior-idle-ms = <100>;
         };
@@ -115,9 +115,65 @@
 
         colon {
             bindings = <&kp DE_COLON>;
-            key-positions = <11 21>;
+            key-positions = <8 18>;
             timeout-ms = <75>;
             require-prior-idle-ms = <100>;
+        };
+
+        Enter {
+            bindings = <&kp ENTER>;
+            key-positions = <7 17>;
+            timeout-ms = <75>;
+            require-prior-idle-ms = <100>;
+        };
+
+        CtrlAltGuiS {
+            bindings = <&sk LA(LC(LG(LEFT_SHIFT)))>;
+            key-positions = <10 11 12 13>;
+            timeout-ms = <75>;
+            require-prior-idle-ms = <300>;
+        };
+
+        AltGuiS {
+            bindings = <&sk LA(LG(LEFT_SHIFT))>;
+            key-positions = <11 12 13>;
+            require-prior-idle-ms = <300>;
+            timeout-ms = <75>;
+        };
+
+        GuiS {
+            bindings = <&sk LG(LEFT_SHIFT)>;
+            key-positions = <12 13>;
+            require-prior-idle-ms = <300>;
+            timeout-ms = <75>;
+        };
+
+        AltS {
+            bindings = <&sk LA(LEFT_SHIFT)>;
+            key-positions = <13 11>;
+            require-prior-idle-ms = <300>;
+            timeout-ms = <75>;
+        };
+
+        AltGui {
+            bindings = <&sk LG(LEFT_ALT)>;
+            key-positions = <11 10>;
+            require-prior-idle-ms = <300>;
+            timeout-ms = <75>;
+        };
+
+        SCtrl {
+            bindings = <&sk LC(LEFT_SHIFT)>;
+            key-positions = <10 13>;
+            require-prior-idle-ms = <300>;
+            timeout-ms = <75>;
+        };
+
+        CtrlGui {
+            bindings = <&sk LG(LCTRL)>;
+            key-positions = <10 12>;
+            require-prior-idle-ms = <300>;
+            timeout-ms = <75>;
         };
     };
 
