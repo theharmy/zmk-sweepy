@@ -91,26 +91,33 @@
 
         Tab {
             bindings = <&kp TAB>;
-            key-positions = <2 12>;
+            key-positions = <12 2>;
             timeout-ms = <75>;
             require-prior-idle-ms = <100>;
         };
 
         repeat {
             bindings = <&key_repeat>;
-            key-positions = <3 13>;
+            key-positions = <13 23>;
             timeout-ms = <75>;
         };
 
         repeat_r {
             bindings = <&key_repeat>;
-            key-positions = <6 16>;
+            key-positions = <16 26>;
             timeout-ms = <75>;
         };
 
         c-bspc {
             bindings = <&kp LC(BACKSPACE)>;
             key-positions = <9 19>;
+        };
+
+        colon {
+            bindings = <&kp DE_COLON>;
+            key-positions = <11 21>;
+            timeout-ms = <75>;
+            require-prior-idle-ms = <100>;
         };
     };
 
@@ -169,7 +176,7 @@
         to_sym: to_sym {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press>, <&to 1 &kp F14>;
+            bindings = <&macro_tap>, <&to 1 &kp F14>;
 
             label = "TO_SYM";
         };
@@ -177,7 +184,7 @@
         to_nav: hmr_nav {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press>, <&to 1 &kp F15>;
+            bindings = <&macro_tap>, <&to 1 &kp F15>;
 
             label = "HMR_NAV";
         };
@@ -185,7 +192,7 @@
         to_norden: to_norden {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press>, <&to 1 &kp F17>;
+            bindings = <&macro_tap>, <&to 1 &kp F17>;
 
             label = "TO_NORDEN";
         };
@@ -241,10 +248,10 @@
 
         OSL_Left {
             bindings = <
-&trans     &trans    &trans    &trans     &trans    &trans  &trans  &trans  &trans  &trans
-&sk LCTRL  &sk LALT  &sk LGUI  &sk LSHFT  &trans    &trans  &trans  &trans  &trans  &trans
-&trans     &trans    &trans    &trans     &trans    &trans  &trans  &trans  &trans  &trans
-                               &trans     &trans    &trans  &trans
+&trans     &trans    &trans    &trans     &trans    &trans  &trans     &trans  &trans  &trans
+&sk LCTRL  &sk LALT  &sk LGUI  &sk LSHFT  &trans    &trans  &trans     &trans  &trans  &trans
+&trans     &trans    &trans    &trans     &trans    &trans  &trans     &trans  &trans  &trans
+                               &trans     &trans    &trans  &kp ENTER
             >;
         };
 
