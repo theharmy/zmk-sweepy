@@ -85,7 +85,7 @@
         Esc {
             bindings = <&kp ESCAPE>;
             key-positions = <1 11>;
-            require-prior-idle-ms = <100>;
+            require-prior-idle-ms = <300>;
             timeout-ms = <75>;
         };
 
@@ -93,13 +93,14 @@
             bindings = <&kp TAB>;
             key-positions = <12 2>;
             timeout-ms = <75>;
-            require-prior-idle-ms = <100>;
+            require-prior-idle-ms = <300>;
         };
 
         repeat {
             bindings = <&key_repeat>;
             key-positions = <13 23>;
             timeout-ms = <75>;
+            require-prior-idle-ms = <300>;
         };
 
         repeat_r {
@@ -111,20 +112,22 @@
         c-bspc {
             bindings = <&kp LC(BACKSPACE)>;
             key-positions = <9 19>;
+            require-prior-idle-ms = <300>;
+            timeout-ms = <75>;
         };
 
         colon {
             bindings = <&kp DE_COLON>;
             key-positions = <8 18>;
             timeout-ms = <75>;
-            require-prior-idle-ms = <100>;
+            require-prior-idle-ms = <300>;
         };
 
         Enter {
             bindings = <&kp ENTER>;
             key-positions = <7 17>;
             timeout-ms = <75>;
-            require-prior-idle-ms = <100>;
+            require-prior-idle-ms = <300>;
         };
 
         CtrlAltGuiS {
@@ -174,6 +177,13 @@
             key-positions = <10 12>;
             require-prior-idle-ms = <300>;
             timeout-ms = <75>;
+        };
+
+        SftTab {
+            bindings = <&kp LS(TAB)>;
+            key-positions = <7 17>;
+            timeout-ms = <75>;
+            require-prior-idle-ms = <300>;
         };
     };
 
