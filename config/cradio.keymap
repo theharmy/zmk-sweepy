@@ -19,10 +19,21 @@
             bindings = <&kp>, <&kp>;
         };
 
-        sym_hmr: sym_hmr {
+        mo_sym_hmr: mo_sym_hmr {
             compatible = "zmk,behavior-hold-tap";
-            label = "SYM_HMR";
+            label = "MO_SYM_HMR";
             bindings = <&mo>, <&to_sym>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <400>;
+            flavor = "tap-unless-interrupted";
+            require-prior-idle-ms = <150>;
+        };
+
+        mo_nav_hmr: mo_nav_hmr {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MO_NAV_HMR";
+            bindings = <&mo>, <&to_nav>;
 
             #binding-cells = <2>;
             tapping-term-ms = <350>;
@@ -30,13 +41,24 @@
             require-prior-idle-ms = <150>;
         };
 
-        nav_hmr: nav_hmr {
+        sl_nav_hrm: sl_nav_hrm {
             compatible = "zmk,behavior-hold-tap";
-            label = "NAV_HMR";
-            bindings = <&mo>, <&to_nav>;
+            label = "SL_NAV_HRM";
+            bindings = <&mo>, <&sl>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <350>;
+            tapping-term-ms = <400>;
+            flavor = "tap-unless-interrupted";
+            require-prior-idle-ms = <150>;
+        };
+
+        sl_sym_hrm: sl_sym_hrm {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SL_SYM_HRM";
+            bindings = <&mo>, <&sl>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <400>;
             flavor = "tap-unless-interrupted";
             require-prior-idle-ms = <150>;
         };
@@ -264,6 +286,22 @@
 
             label = "TO_NORDEN";
         };
+
+        sk_sym: sk_sym {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&sl 1 &kp F14>;
+
+            label = "SK_SYM";
+        };
+
+        sk_nav: sk_nav {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&sl 2 &kp F15>;
+
+            label = "SK_NAV";
+        };
     };
 
     keymap {
@@ -271,11 +309,13 @@
 
         Norden {
             bindings = <
-&kp DE_Q  &kp DE_L  &kp DE_D  &kp DE_Z  &kp DE_K        &kp DE_P      &kp DE_W         &kp DE_O      &kp DE_U      &kp BSPC
-&kp DE_R  &kp DE_N  &kp DE_T  &kp DE_H  &kp DE_F        &kp DE_Y      &kp DE_C         &kp DE_E      &kp DE_I      &kp DE_A
-&kp DE_X  &kp DE_J  &kp DE_M  &kp DE_B  &kp DE_V        &kp DE_MINUS  &kp DE_G         &kp DE_SLASH  &kp DE_COMMA  &kp DE_DOT
-                              &kp DE_S  &nav_hmr 5 0    &sym_hmr 4 4  &mt LSHFT SPACE
+&kp DE_Q  &kp DE_L  &kp DE_D  &kp DE_Z  &kp DE_K           &kp DE_P         &kp DE_W         &kp DE_O      &kp DE_U      &kp BSPC
+&kp DE_R  &kp DE_N  &kp DE_T  &kp DE_H  &kp DE_F           &kp DE_Y         &kp DE_C         &kp DE_E      &kp DE_I      &kp DE_A
+&kp DE_X  &kp DE_J  &kp DE_M  &kp DE_B  &kp DE_V           &kp DE_MINUS     &kp DE_G         &kp DE_SLASH  &kp DE_COMMA  &kp DE_DOT
+                              &kp DE_S  &sl_nav_hrm 5 2    &sl_nav_hrm 4 1  &mt LSHFT SPACE
             >;
+
+            label = "Norden";
         };
 
         SYM {
@@ -285,6 +325,8 @@
 &kp DE_EXCLAMATION  &kp DE_QUESTION    &kp DE_ACUTE  &kp DE_FSLH       &kp DE_TILDE           &kp DE_MINUS  &kp DE_DOLLAR      &kp DE_POUND              &kp DE_SQT           &kp DE_DQT
                                                      &trans            &trans                 &to_norden    &trans
             >;
+
+            label = "Sym";
         };
 
         NAV {
@@ -294,33 +336,41 @@
 &trans     &trans    &trans    &key_repeat  &kp N0        &trans    &key_repeat  &trans  &trans     &trans
                                &trans       &to_norden    &trans    &kp ENTER
             >;
+
+            label = "Nav";
         };
 
-        tri_layer {
+        num {
             bindings = <
 &trans  &trans  &trans  &trans  &trans       &trans  &trans  &trans  &trans  &trans
 &kp N1  &kp N2  &kp N3  &kp N4  &kp N5       &kp N6  &kp N7  &kp N8  &kp N9  &kp N0
 &trans  &trans  &trans  &trans  &kp DE_N0    &trans  &trans  &trans  &trans  &to 6
                         &trans  &trans       &trans  &trans
             >;
+
+            label = "Num";
         };
 
-        OSL_Right {
+        Mod_R {
             bindings = <
 &trans  &trans  &trans  &trans  &trans    &trans  &trans     &trans    &trans    &trans
 &trans  &trans  &trans  &trans  &trans    &trans  &sk LSHFT  &sk LGUI  &sk LALT  &sk LCTRL
 &trans  &trans  &trans  &trans  &trans    &trans  &trans     &trans    &trans    &trans
                         &trans  &trans    &trans  &trans
             >;
+
+            label = "mod_r";
         };
 
-        OSL_Left {
+        Mod_L {
             bindings = <
 &trans     &trans    &trans    &trans     &trans    &trans  &trans     &trans  &trans  &trans
 &sk LCTRL  &sk LALT  &sk LGUI  &sk LSHFT  &trans    &trans  &trans     &trans  &trans  &trans
 &trans     &trans    &trans    &trans     &trans    &trans  &trans     &trans  &trans  &trans
                                &trans     &trans    &trans  &kp ENTER
             >;
+
+            label = "mod_l";
         };
 
         layer_4 {
