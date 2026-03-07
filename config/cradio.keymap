@@ -315,7 +315,7 @@
                               &kp DE_S  &sl_nav_hrm 5 2    &sl_nav_hrm 4 1  &mt LSHFT SPACE
             >;
 
-            label = "Norden";
+            label = "NRDN";
         };
 
         SYM {
@@ -326,7 +326,7 @@
                                                      &trans            &trans                 &to_norden    &trans
             >;
 
-            label = "Sym";
+            label = "SYM";
         };
 
         NAV {
@@ -337,7 +337,7 @@
                                &trans       &to_norden    &trans    &kp ENTER
             >;
 
-            label = "Nav";
+            label = "NAV";
         };
 
         num {
@@ -348,7 +348,7 @@
                         &trans  &trans       &trans  &trans
             >;
 
-            label = "Num";
+            label = "NUM";
         };
 
         Mod_R {
@@ -359,7 +359,7 @@
                         &trans  &trans    &trans  &trans
             >;
 
-            label = "mod_r";
+            label = "RMoD";
         };
 
         Mod_L {
@@ -370,7 +370,7 @@
                                &trans     &trans    &trans  &kp ENTER
             >;
 
-            label = "mod_l";
+            label = "RMoD";
         };
 
         layer_4 {
