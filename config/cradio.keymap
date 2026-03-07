@@ -19,9 +19,9 @@
             bindings = <&kp>, <&kp>;
         };
 
-        mo_sym_hmr: mo_sym_hmr {
+        to_sym_hmr: to_sym_hmr {
             compatible = "zmk,behavior-hold-tap";
-            label = "MO_SYM_HMR";
+            label = "TO_SYM_HMR";
             bindings = <&mo>, <&to_sym>;
 
             #binding-cells = <2>;
@@ -30,13 +30,13 @@
             require-prior-idle-ms = <150>;
         };
 
-        mo_nav_hmr: mo_nav_hmr {
+        to_nav_hmr: to_nav_hmr {
             compatible = "zmk,behavior-hold-tap";
-            label = "MO_NAV_HMR";
+            label = "TO_NAV_HMR";
             bindings = <&mo>, <&to_nav>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <350>;
+            tapping-term-ms = <400>;
             flavor = "tap-unless-interrupted";
             require-prior-idle-ms = <150>;
         };
@@ -158,48 +158,48 @@
             bindings = <&sk LA(LC(LG(LEFT_SHIFT)))>;
             key-positions = <10 11 12 13>;
             timeout-ms = <75>;
-            require-prior-idle-ms = <300>;
+            require-prior-idle-ms = <500>;
         };
 
         AltGuiS {
             bindings = <&sk LA(LG(LEFT_SHIFT))>;
             key-positions = <11 12 13>;
-            require-prior-idle-ms = <300>;
+            require-prior-idle-ms = <500>;
             timeout-ms = <75>;
         };
 
         GuiS {
             bindings = <&sk LG(LEFT_SHIFT)>;
             key-positions = <12 13>;
-            require-prior-idle-ms = <300>;
+            require-prior-idle-ms = <500>;
             timeout-ms = <75>;
         };
 
         AltS {
             bindings = <&sk LA(LEFT_SHIFT)>;
             key-positions = <13 11>;
-            require-prior-idle-ms = <300>;
+            require-prior-idle-ms = <500>;
             timeout-ms = <75>;
         };
 
         AltGui {
             bindings = <&sk LG(LEFT_ALT)>;
             key-positions = <11 10>;
-            require-prior-idle-ms = <300>;
+            require-prior-idle-ms = <500>;
             timeout-ms = <75>;
         };
 
         SCtrl {
             bindings = <&sk LC(LEFT_SHIFT)>;
             key-positions = <10 13>;
-            require-prior-idle-ms = <300>;
+            require-prior-idle-ms = <500>;
             timeout-ms = <75>;
         };
 
         CtrlGui {
             bindings = <&sk LG(LCTRL)>;
             key-positions = <10 12>;
-            require-prior-idle-ms = <300>;
+            require-prior-idle-ms = <500>;
             timeout-ms = <75>;
         };
 
@@ -207,7 +207,7 @@
             bindings = <&kp LS(TAB)>;
             key-positions = <7 17>;
             timeout-ms = <75>;
-            require-prior-idle-ms = <300>;
+            require-prior-idle-ms = <500>;
         };
     };
 
@@ -312,7 +312,7 @@
 &kp DE_Q  &kp DE_L  &kp DE_D  &kp DE_Z  &kp DE_K           &kp DE_P         &kp DE_W         &kp DE_O      &kp DE_U      &kp BSPC
 &kp DE_R  &kp DE_N  &kp DE_T  &kp DE_H  &kp DE_F           &kp DE_Y         &kp DE_C         &kp DE_E      &kp DE_I      &kp DE_A
 &kp DE_X  &kp DE_J  &kp DE_M  &kp DE_B  &kp DE_V           &kp DE_MINUS     &kp DE_G         &kp DE_SLASH  &kp DE_COMMA  &kp DE_DOT
-                              &kp DE_S  &sl_nav_hrm 5 2    &sl_nav_hrm 4 1  &mt LSHFT SPACE
+                              &kp DE_S  &to_nav_hmr 5 0    &to_sym_hmr 4 0  &mt LSHFT SPACE
             >;
 
             label = "NRDN";
@@ -356,7 +356,7 @@
 &trans  &trans  &trans  &trans  &trans    &trans  &trans     &trans    &trans    &trans
 &trans  &trans  &trans  &trans  &trans    &trans  &sk LSHFT  &sk LGUI  &sk LALT  &sk LCTRL
 &trans  &trans  &trans  &trans  &trans    &trans  &trans     &trans    &trans    &trans
-                        &trans  &trans    &trans  &trans
+                        &trans  &to 0     &trans  &trans
             >;
 
             label = "RMoD";
@@ -367,10 +367,10 @@
 &trans     &trans    &trans    &trans     &trans    &trans  &trans     &trans  &trans  &trans
 &sk LCTRL  &sk LALT  &sk LGUI  &sk LSHFT  &trans    &trans  &trans     &trans  &trans  &trans
 &trans     &trans    &trans    &trans     &trans    &trans  &trans     &trans  &trans  &trans
-                               &trans     &trans    &trans  &kp ENTER
+                               &trans     &trans    &to 0   &kp ENTER
             >;
 
-            label = "RMoD";
+            label = "LMoD";
         };
 
         layer_4 {
