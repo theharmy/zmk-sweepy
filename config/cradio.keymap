@@ -60,6 +60,17 @@
             tapping-term-ms = <350>;
             flavor = "tap-unless-interrupted";
         };
+
+        s_ctrl: s_ctrl {
+            compatible = "zmk,behavior-hold-tap";
+            label = "S_CTRL";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            require-prior-idle-ms = <200>;
+            tapping-term-ms = <150>;
+        };
     };
 
     conditional_layers {
@@ -106,48 +117,41 @@
 
         Esc {
             bindings = <&kp ESCAPE>;
-            key-positions = <1 11>;
+            key-positions = <1 2>;
             require-prior-idle-ms = <300>;
             timeout-ms = <75>;
         };
 
         Tab {
             bindings = <&kp TAB>;
-            key-positions = <12 2>;
+            key-positions = <2 3>;
             timeout-ms = <75>;
             require-prior-idle-ms = <300>;
         };
 
         repeat {
             bindings = <&key_repeat>;
-            key-positions = <13 23>;
+            key-positions = <13 14>;
             timeout-ms = <75>;
             require-prior-idle-ms = <300>;
         };
 
         repeat_r {
             bindings = <&key_repeat>;
-            key-positions = <16 26>;
+            key-positions = <16 15>;
             timeout-ms = <75>;
         };
 
         c-bspc {
             bindings = <&kp LC(BACKSPACE)>;
-            key-positions = <9 19>;
+            key-positions = <9 8>;
             require-prior-idle-ms = <300>;
             timeout-ms = <75>;
-        };
-
-        colon {
-            bindings = <&kp DE_COLON>;
-            key-positions = <8 18>;
-            timeout-ms = <75>;
-            require-prior-idle-ms = <300>;
         };
 
         Enter {
             bindings = <&kp ENTER>;
-            key-positions = <7 17>;
+            key-positions = <7 8>;
             timeout-ms = <75>;
             require-prior-idle-ms = <300>;
         };
@@ -180,9 +184,9 @@
             timeout-ms = <75>;
         };
 
-        AltGui {
-            bindings = <&sk LG(LEFT_ALT)>;
-            key-positions = <11 10>;
+        AltCtrl {
+            bindings = <&sk LC(LEFT_ALT)>;
+            key-positions = <10 11>;
             require-prior-idle-ms = <500>;
             timeout-ms = <75>;
         };
@@ -203,7 +207,7 @@
 
         SftTab {
             bindings = <&kp LS(TAB)>;
-            key-positions = <7 17>;
+            key-positions = <7 6>;
             timeout-ms = <75>;
             require-prior-idle-ms = <500>;
         };
@@ -212,6 +216,13 @@
             bindings = <&bootloader>;
             key-positions = <0 9>;
             layers = <2>;
+        };
+
+        AltGui {
+            bindings = <&sk LA(LEFT_GUI)>;
+            key-positions = <12 11>;
+            timeout-ms = <75>;
+            require-prior-idle-ms = <500>;
         };
     };
 
@@ -313,10 +324,10 @@
 
         Norden {
             bindings = <
-&kp DE_Q  &kp DE_L  &kp DE_D  &kp DE_Z  &kp DE_K           &kp DE_P         &kp DE_W         &kp DE_O      &kp DE_U      &kp BSPC
-&kp DE_R  &kp DE_N  &kp DE_T  &kp DE_H  &kp DE_F           &kp DE_Y         &kp DE_C         &kp DE_E      &kp DE_I      &kp DE_A
-&kp DE_X  &kp DE_J  &kp DE_M  &kp DE_B  &kp DE_V           &kp DE_MINUS     &kp DE_G         &kp DE_SLASH  &kp DE_COMMA  &kp DE_DOT
-                              &kp DE_S  &sl_nav_hrm 2 4    &sl_sym_hrm 1 3  &mt LSHFT SPACE
+&kp DE_Q  &kp DE_L  &kp DE_D  &kp DE_Z            &kp DE_K           &kp DE_P         &kp DE_W         &kp DE_O      &kp DE_U      &kp BSPC
+&kp DE_R  &kp DE_N  &kp DE_T  &kp DE_H            &kp DE_F           &kp DE_Y         &kp DE_C         &kp DE_E      &kp DE_I      &kp DE_A
+&kp DE_X  &kp DE_J  &kp DE_M  &kp DE_B            &kp DE_V           &kp DE_MINUS     &kp DE_G         &kp DE_SLASH  &kp DE_COMMA  &kp DE_DOT
+                              &s_ctrl LCTRL DE_S  &sl_nav_hrm 2 4    &sl_sym_hrm 1 3  &mt LSHFT SPACE
             >;
 
             label = "NRDN";
@@ -349,7 +360,7 @@
 &trans  &trans  &trans  &trans  &trans    &trans  &trans     &trans    &trans    &trans
 &trans  &trans  &trans  &trans  &trans    &trans  &sk LSHFT  &sk LGUI  &sk LALT  &sk LCTRL
 &trans  &trans  &trans  &trans  &trans    &trans  &trans     &trans    &trans    &trans
-                        &trans  &trans    &trans  &trans
+                        &trans  &to 0     &trans  &trans
             >;
 
             label = "RMoD";
@@ -357,10 +368,10 @@
 
         Mod_L {
             bindings = <
-&trans     &trans    &trans    &trans     &trans    &trans  &trans     &trans  &trans  &trans
-&sk LCTRL  &sk LALT  &sk LGUI  &sk LSHFT  &trans    &trans  &trans     &trans  &trans  &trans
-&trans     &trans    &trans    &trans     &trans    &trans  &trans     &trans  &trans  &trans
-                               &trans     &trans    &trans  &kp ENTER
+&trans     &trans    &trans    &trans     &trans    &trans  &trans  &trans  &trans  &trans
+&sk LCTRL  &sk LALT  &sk LGUI  &sk LSHFT  &trans    &trans  &trans  &trans  &trans  &trans
+&trans     &trans    &trans    &trans     &trans    &trans  &trans  &trans  &trans  &trans
+                               &trans     &trans    &to 0   &trans
             >;
 
             label = "LMoD";
