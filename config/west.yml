@@ -6,12 +6,10 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: zmk-locales_base
       url-base: https://github.com/joelspadin
-    # - name: janpfischer
-    # url-base: https://github.com/janpfischer
-    #  - name: englmaxi
-    #    url-base: https://github.com/englmaxi
-    - name: carrefinho
-      url-base: https://github.com/carrefinho
+    - name: janpfischer
+      url-base: https://github.com/janpfischer
+  #  - name: englmaxi
+  #    url-base: https://github.com/englmaxi
 
   # Additional modules containing boards/shields/custom code can be listed here as well
   # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
@@ -25,12 +23,8 @@ manifest:
     #  - name: zmk-dongle-display
     #    remote: englmaxi
     #    revision: v0.3
-    # - name: zmk-dongle-screen
-    #   remote: janpfischer
-    #   revision: main
-
-    - name: prospector-zmk-module
-      remote: carrefinho
+    - name: zmk-dongle-screen
+      remote: janpfischer
       revision: main
   self:
     path: config
