@@ -30,4 +30,5 @@ include:
   - board: nice_nano_v2
     shield: settings_reset
   - board: nice_nano_v2
-    shield: cradio_dongle dongle_display
+    shield: cradio_dongle dongle_screen
+    # shield: cradio_dongle dongle_display
