@@ -47,7 +47,7 @@
             bindings = <&mo>, <&sl>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <350>;
+            tapping-term-ms = <200>;
             flavor = "tap-unless-interrupted";
         };
 
@@ -88,7 +88,7 @@
         compatible = "zmk,conditional-layers";
 
         number {
-            if-layers = <3 4>;
+            if-layers = <2 1>;
             then-layer = <5>;
         };
     };
@@ -129,7 +129,7 @@
         Esc {
             bindings = <&kp ESCAPE>;
             key-positions = <1 2>;
-            require-prior-idle-ms = <300>;
+            require-prior-idle-ms = <200>;
             timeout-ms = <75>;
         };
 
@@ -137,7 +137,7 @@
             bindings = <&kp TAB>;
             key-positions = <2 3>;
             timeout-ms = <75>;
-            require-prior-idle-ms = <300>;
+            require-prior-idle-ms = <200>;
         };
 
         repeat {
@@ -346,10 +346,10 @@
 
         SYM {
             bindings = <
-&kp DE_PERCENT      &kp DE_LESS_THAN   &kp DE_CARET  &kp DE_PIPE       &kp DE_COLON           &kp DE_COMMA  &kp DE_STAR        &kp DE_BACKSLASH          &kp DE_GREATER_THAN  &kp DE_AMPERSAND
-&kp DE_EQUAL        &kp DE_LEFT_BRACE  &kp DE_LPAR   &kp DE_SEMICOLON  &kp DE_LEFT_BRACKET    &kp DE_RBKT   &kp DE_UNDERSCORE  &kp DE_RIGHT_PARENTHESIS  &kp DE_RIGHT_BRACE   &kp DE_PLUS
-&kp DE_EXCLAMATION  &kp DE_QUESTION    &kp DE_ACUTE  &kp DE_FSLH       &kp DE_TILDE           &kp DE_MINUS  &kp DE_DOLLAR      &kp DE_POUND              &kp DE_SQT           &kp DE_DQT
-                                                     &trans            &trans                 &trans        &trans
+&kp DE_PERCENT      &kp DE_LESS_THAN   &kp DE_CARET      &kp DE_PIPE       &kp DE_COLON           &kp DE_COMMA  &kp DE_STAR        &kp DE_BACKSLASH          &kp DE_GREATER_THAN  &kp DE_AMPERSAND
+&kp DE_EQUAL        &kp DE_LEFT_BRACE  &kp DE_LPAR       &kp DE_SEMICOLON  &kp DE_LEFT_BRACKET    &kp DE_RBKT   &kp DE_UNDERSCORE  &kp DE_RIGHT_PARENTHESIS  &kp DE_RIGHT_BRACE   &kp DE_PLUS
+&kp DE_EXCLAMATION  &kp DE_QUESTION    &kp LS(DE_ACUTE)  &kp DE_FSLH       &kp DE_TILDE           &kp DE_MINUS  &kp DE_DOLLAR      &kp DE_POUND              &kp DE_SQT           &kp DE_DQT
+                                                         &trans            &trans                 &trans        &trans
             >;
 
             label = "SYM";
