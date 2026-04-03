@@ -324,7 +324,7 @@
 &kp DE_Q  &kp DE_L  &kp DE_D  &kp DE_Z            &kp DE_K           &kp DE_P         &kp DE_W         &kp DE_O      &kp DE_U      &kp BSPC
 &kp DE_R  &kp DE_N  &kp DE_T  &kp DE_H            &kp DE_F           &kp DE_Y         &kp DE_C         &kp DE_E      &kp DE_I      &kp DE_A
 &kp DE_X  &kp DE_J  &kp DE_M  &kp DE_B            &kp DE_V           &kp DE_MINUS     &kp DE_G         &kp DE_SLASH  &kp DE_COMMA  &kp DE_DOT
-                              &s_ctrl LCTRL DE_S  &to_nav_hmr 4 0    &to_sym_hmr 3 0  &mt LSHFT SPACE
+                              &s_ctrl LCTRL DE_S  &sl_nav_hrm 2 4    &sl_sym_hrm 1 3  &mt LSHFT SPACE
             >;
 
             label = "NRDN";
@@ -335,7 +335,7 @@
 &kp DE_PERCENT      &kp DE_LESS_THAN   &kp DE_EQUAL      &kp DE_PIPE       &kp DE_COLON           &kp DE_PLUS   &kp DE_STAR        &kp DE_BACKSLASH          &kp DE_GREATER_THAN  &kp DE_AMPERSAND
 &kp DE_CARET        &kp DE_LEFT_BRACE  &kp DE_LPAR       &kp DE_SEMICOLON  &kp DE_LEFT_BRACKET    &kp DE_RBKT   &kp DE_UNDERSCORE  &kp DE_RIGHT_PARENTHESIS  &kp DE_RIGHT_BRACE   &kp DE_COMMA
 &kp DE_EXCLAMATION  &kp DE_QUESTION    &kp LS(DE_ACUTE)  &kp DE_FSLH       &kp DE_TILDE           &kp DE_MINUS  &kp DE_DOLLAR      &kp DE_POUND              &kp DE_SQT           &kp DE_DQT
-                                                         &trans            &mo 5                  &to 0         &trans
+                                                         &trans            &mo 5                  &trans        &trans
             >;
 
             label = "SYM";
@@ -344,9 +344,9 @@
         NAV {
             bindings = <
 &kp N1     &kp N2    &kp N3    &kp N4       &kp N5     &kp HOME  &kp PG_DN    &kp PG_UP  &kp END    &kp LC(BSPC)
-&sk LCTRL  &sk LALT  &sk LGUI  &sk LSHFT    &kp TAB    &kp LEFT  &kp DOWN     &kp UP     &kp RIGHT  &mt LCTRL ESCAPE
+&sk LCTRL  &sk LALT  &sk LGUI  &sk LSHFT    &kp TAB    &kp LEFT  &kp DOWN     &kp UP     &kp RIGHT  &sk LCTRL
 &trans     &trans    &trans    &key_repeat  &kp N0     &trans    &key_repeat  &trans     &trans     &trans
-                               &trans       &to 0      &mo 5     &kp ENTER
+                               &trans       &trans     &mo 5     &kp ENTER
             >;
 
             label = "NAV";
