@@ -67,7 +67,7 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             require-prior-idle-ms = <200>;
             tapping-term-ms = <150>;
         };
@@ -84,14 +84,7 @@
         };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        number {
-            if-layers = <2 1>;
-            then-layer = <5>;
-        };
-    };
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 
     combos {
         compatible = "zmk,combos";
@@ -155,14 +148,14 @@
 
         c-bspc {
             bindings = <&kp LC(BACKSPACE)>;
-            key-positions = <9 8>;
+            key-positions = <8 7>;
             require-prior-idle-ms = <300>;
             timeout-ms = <75>;
         };
 
         Enter {
             bindings = <&kp ENTER>;
-            key-positions = <7 8>;
+            key-positions = <7 6>;
             timeout-ms = <75>;
             require-prior-idle-ms = <300>;
         };
@@ -214,13 +207,6 @@
             key-positions = <10 12>;
             require-prior-idle-ms = <500>;
             timeout-ms = <75>;
-        };
-
-        SftTab {
-            bindings = <&kp LS(TAB)>;
-            key-positions = <7 6>;
-            timeout-ms = <75>;
-            require-prior-idle-ms = <500>;
         };
 
         boot {
@@ -335,10 +321,10 @@
 
         Norden {
             bindings = <
-&kp DE_Q               &kp DE_L                     &kp DE_D                     &kp DE_Z                  &kp DE_K           &kp DE_P         &kp DE_W                       &kp DE_O                     &kp DE_U                     &kp BSPC
-&homerow_mods LCTRL R  &homerow_mods LEFT_ALT DE_N  &homerow_mods LEFT_GUI DE_T  &homerow_mods LSHFT DE_H  &kp DE_F           &kp DE_Y         &homerow_mods LEFT_SHIFT DE_C  &homerow_mods LEFT_GUI DE_E  &homerow_mods LEFT_ALT DE_I  &homerow_mods LCTRL DE_A
-&kp DE_X               &kp DE_J                     &kp DE_M                     &kp DE_B                  &kp DE_V           &kp DE_MINUS     &kp DE_G                       &kp DE_SLASH                 &kp DE_COMMA                 &kp DE_DOT
-                                                                                 &s_ctrl LCTRL DE_S        &sl_nav_hrm 2 4    &sl_sym_hrm 1 3  &mt LSHFT SPACE
+&kp DE_Q  &kp DE_L  &kp DE_D  &kp DE_Z            &kp DE_K           &kp DE_P         &kp DE_W         &kp DE_O      &kp DE_U      &kp BSPC
+&kp DE_R  &kp DE_N  &kp DE_T  &kp DE_H            &kp DE_F           &kp DE_Y         &kp DE_C         &kp DE_E      &kp DE_I      &kp DE_A
+&kp DE_X  &kp DE_J  &kp DE_M  &kp DE_B            &kp DE_V           &kp DE_MINUS     &kp DE_G         &kp DE_SLASH  &kp DE_COMMA  &kp DE_DOT
+                              &s_ctrl LCTRL DE_S  &to_nav_hmr 4 0    &to_sym_hmr 3 0  &mt LSHFT SPACE
             >;
 
             label = "NRDN";
@@ -346,10 +332,10 @@
 
         SYM {
             bindings = <
-&kp DE_PERCENT      &kp DE_LESS_THAN   &kp DE_CARET      &kp DE_PIPE       &kp DE_COLON           &kp DE_COMMA  &kp DE_STAR        &kp DE_BACKSLASH          &kp DE_GREATER_THAN  &kp DE_AMPERSAND
-&kp DE_EQUAL        &kp DE_LEFT_BRACE  &kp DE_LPAR       &kp DE_SEMICOLON  &kp DE_LEFT_BRACKET    &kp DE_RBKT   &kp DE_UNDERSCORE  &kp DE_RIGHT_PARENTHESIS  &kp DE_RIGHT_BRACE   &kp DE_PLUS
+&kp DE_PERCENT      &kp DE_LESS_THAN   &kp DE_EQUAL      &kp DE_PIPE       &kp DE_COLON           &kp DE_PLUS   &kp DE_STAR        &kp DE_BACKSLASH          &kp DE_GREATER_THAN  &kp DE_AMPERSAND
+&kp DE_CARET        &kp DE_LEFT_BRACE  &kp DE_LPAR       &kp DE_SEMICOLON  &kp DE_LEFT_BRACKET    &kp DE_RBKT   &kp DE_UNDERSCORE  &kp DE_RIGHT_PARENTHESIS  &kp DE_RIGHT_BRACE   &kp DE_COMMA
 &kp DE_EXCLAMATION  &kp DE_QUESTION    &kp LS(DE_ACUTE)  &kp DE_FSLH       &kp DE_TILDE           &kp DE_MINUS  &kp DE_DOLLAR      &kp DE_POUND              &kp DE_SQT           &kp DE_DQT
-                                                         &trans            &trans                 &trans        &trans
+                                                         &trans            &mo 5                  &to 0         &trans
             >;
 
             label = "SYM";
@@ -357,10 +343,10 @@
 
         NAV {
             bindings = <
-&kp N1     &kp N2    &kp N3    &kp N4       &kp N5     &kp N6    &kp N7       &kp N8  &kp N9     &kp LC(BSPC)
-&sk LCTRL  &sk LALT  &sk LGUI  &sk LSHFT    &kp TAB    &kp LEFT  &kp DOWN     &kp UP  &kp RIGHT  &mt LCTRL ESCAPE
-&trans     &trans    &trans    &key_repeat  &kp N0     &trans    &key_repeat  &trans  &trans     &trans
-                               &trans       &trans     &trans    &kp ENTER
+&kp N1     &kp N2    &kp N3    &kp N4       &kp N5     &kp HOME  &kp PG_DN    &kp PG_UP  &kp END    &kp LC(BSPC)
+&sk LCTRL  &sk LALT  &sk LGUI  &sk LSHFT    &kp TAB    &kp LEFT  &kp DOWN     &kp UP     &kp RIGHT  &mt LCTRL ESCAPE
+&trans     &trans    &trans    &key_repeat  &kp N0     &trans    &key_repeat  &trans     &trans     &trans
+                               &trans       &to 0      &mo 5     &kp ENTER
             >;
 
             label = "NAV";
@@ -371,7 +357,7 @@
 &trans  &trans  &trans  &trans  &trans    &trans  &trans     &trans    &trans    &trans
 &trans  &trans  &trans  &trans  &trans    &trans  &sk LSHFT  &sk LGUI  &sk LALT  &sk LCTRL
 &trans  &trans  &trans  &trans  &trans    &trans  &trans     &trans    &trans    &trans
-                        &trans  &to 0     &trans  &trans
+                        &trans  &trans    &trans  &trans
             >;
 
             label = "RMoD";
@@ -379,10 +365,10 @@
 
         Mod_L {
             bindings = <
-&trans     &trans    &trans    &trans     &trans    &trans  &trans  &trans  &trans  &trans
-&sk LCTRL  &sk LALT  &sk LGUI  &sk LSHFT  &trans    &trans  &trans  &trans  &trans  &trans
-&trans     &trans    &trans    &trans     &trans    &trans  &trans  &trans  &trans  &trans
-                               &trans     &trans    &to 0   &trans
+&trans     &trans    &trans    &trans     &trans    &trans  &trans     &trans  &trans  &trans
+&sk LCTRL  &sk LALT  &sk LGUI  &sk LSHFT  &trans    &trans  &trans     &trans  &trans  &trans
+&trans     &trans    &trans    &trans     &trans    &trans  &trans     &trans  &trans  &trans
+                               &trans     &trans    &trans  &kp ENTER
             >;
 
             label = "LMoD";
