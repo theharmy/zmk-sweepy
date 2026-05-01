@@ -372,7 +372,7 @@
         NAV {
             bindings = <
 &trans        &kp LC(TAB)      &kp LS(LC(TAB))  &kp LC(F4)   &trans     &trans    &kp PG_DN    &kp PG_UP  &kp BSPC   &trans
-&sk LCTRL     &sk LALT         &sk LGUI         &sk LSHFT    &kp TAB    &kp LEFT  &kp DOWN     &kp UP     &kp RIGHT  &sk LCTRL
+&sk LCTRL     &sk LALT         &sk LGUI         &sk LSHFT    &kp TAB    &kp LEFT  &kp DOWN     &kp UP     &kp RIGHT  &trans
 &kp LG(DE_Q)  &kp LA(LS(TAB))  &kp LA(TAB)      &key_repeat  &kp N0     &kp HOME  &key_repeat  &trans     &kp END    &trans
                                                 &trans       &trans     &trans    &kp ENTER
             >;
