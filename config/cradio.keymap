@@ -349,10 +349,10 @@
 
         Norden {
             bindings = <
-&kp DE_Q        &kp DE_L           &kp DE_D           &kp DE_Z             &kp DE_K    &kp DE_P      &kp DE_W             &kp DE_O           &kp DE_U           &kp LC(BSPC)
-&hm LCTRL DE_R  &hm LEFT_ALT DE_N  &hm LEFT_GUI DE_T  &hm LEFT_SHIFT DE_H  &kp DE_F    &kp DE_Y      &hm LEFT_SHIFT DE_C  &hm LEFT_GUI DE_E  &hm LEFT_ALT DE_I  &hm LCTRL DE_A
-&kp DE_X        &kp DE_J           &kp DE_M           &kp DE_B             &kp DE_V    &kp DE_MINUS  &kp DE_G             &kp DE_SLASH       &kp DE_COMMA       &kp DE_DOT
-                                                      &kp DE_S             &mo 1       &mo 2         &mt LSHFT SPACE
+&kp DE_Q        &kp DE_L           &kp DE_D           &kp DE_Z             &kp DE_K    &kp DE_P              &kp DE_W             &kp DE_O           &kp DE_U           &kp LC(BSPC)
+&hm LCTRL DE_R  &hm LEFT_ALT DE_N  &hm LEFT_GUI DE_T  &hm LEFT_SHIFT DE_H  &kp DE_F    &kp DE_Y              &hm LEFT_SHIFT DE_C  &hm LEFT_GUI DE_E  &hm LEFT_ALT DE_I  &hm LCTRL DE_A
+&kp DE_X        &kp DE_J           &kp DE_M           &kp DE_B             &kp DE_V    &kp DE_MINUS          &kp DE_G             &kp DE_SLASH       &kp DE_COMMA       &kp DE_DOT
+                                                      &mo 1                &kp DE_S    &mt LEFT_SHIFT SPACE  &mo 2
             >;
 
             label = "NRDN";
