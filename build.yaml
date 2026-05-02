@@ -19,17 +19,17 @@
 #
 ---
 include:
-  - board: nice_nano_v2
+  - board: nrfmicro/nrf52840/zmk
     shield: cradio_left
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
 
-  - board: nice_nano_v2
+  - board: nrfmicro/nrf52840/zmk
     shield: cradio_right
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
 
-  - board: nice_nano_v2
+  - board: nrfmicro/nrf52840/zmk
     shield: settings_reset
-  - board: nice_nano_v2
+  - board: nrfmicro/nrf52840/zmk
     shield: cradio_dongle dongle_screen
 
 
